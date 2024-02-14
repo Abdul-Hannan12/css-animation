@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cube</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cube_container {
+            animation: rotate 10s infinite linear reverse;
+            background-color: black;
+            transform-style: preserve-3d;
+        }
+
+        .square {
+            height: 200px;
+            width: 200px;
+            position: absolute;
+            transform-style: preserve-3d;
+        }
+
+        .front {
+            background-color: blueviolet;
+        }
+
+        .right {
+            transform: rotateY(-90deg);
+            transform-origin: right center;
+            background-color: red;
+        }
+
+        .left {
+            transform: rotateY(90deg);
+            transform-origin: left center;
+            background-color: aqua;
+        }
+
+        .back{
+            background-color: yellowgreen;
+            transform: translateZ(-200px);
+        }
+
+        .top{
+            background-color: dodgerblue;
+            transform: rotateX(-90deg);
+            transform-origin: top center;
+        }
+
+        .bottom{
+            background-color: limegreen;
+            transform: rotateX(90deg);
+            transform-origin: bottom center;
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+            }
+
+            to {
+                transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cube_container square">
+        <div class="square front"></div>
+        <div class="square right"></div>
+        <div class="square left"></div>
+        <div class="square back"></div>
+        <div class="square top"></div>
+        <div class="square bottom"></div>
+    </div>
+</body>
+
+</html>

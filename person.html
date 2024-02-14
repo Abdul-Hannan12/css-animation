@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Person</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .head {
+            background-color: blue;
+            height: 100px;
+            width: 80px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            z-index: 3;
+        }
+
+        .body,
+        .bottom {
+            display: flex;
+            justify-content: center;
+        }
+
+        .center {
+            width: 70px;
+            height: 100px;
+            background-color: red;
+            border-radius: 15px 15px 3px 3px;
+            z-index: 2;
+        }
+
+        .arm {
+            height: 10px;
+            width: 50px;
+            background-color: green;
+            position: relative;
+            top: 15px;
+        }
+
+        .leg {
+            height: 60px;
+            width: 12px;
+            background-color: brown;
+            margin: 0px 8px;
+        }
+
+        .rotateRight {
+            animation: rotateRight 0.6s infinite ease-in-out reverse;
+        }
+
+        .rotateHeadRight {
+            animation: rotateHeadRight 0.6s infinite ease-in-out reverse;
+        }
+
+        .rotateRightArmRight {
+            animation: rotateRightArmRight 0.6s infinite ease-in-out reverse;
+        }
+
+        .rotateRightArmLeft {
+            animation: rotateRightArmLeft 0.6s infinite ease-in-out reverse;
+        }
+
+        .rotateRightLegRight {
+            animation: rotateRightLegRight 0.6s infinite ease-in-out reverse;
+        }
+
+        .rotateRightLegLeft {
+            animation: rotateRightLegLeft 0.6s infinite ease-in-out reverse;
+        }
+
+        .rotateLeft {
+            animation: rotateLeft 0.6s infinite ease-in-out reverse;
+        }
+
+        .rotateHeadLeft {
+            animation: rotateHeadLeft 0.6s infinite ease-in-out reverse;
+        }
+
+        .rotateLeftLegLeft {
+            animation: rotateLeftLegLeft 0.6s infinite ease-in-out reverse;
+        }
+
+        .rotateLeftLegRight {
+            animation: rotateLeftLegRight 0.7s infinite ease-in-out reverse;
+        }
+
+        .rotateLeftArmLeft {
+            animation: rotateLeftArmLeft 0.6s infinite ease-in-out reverse;
+        }
+        .rotateLeftArmRight {
+            animation: rotateLeftArmRight 0.7s infinite ease-in-out reverse;
+        }
+
+        @keyframes rotateRight {
+            0% {
+                transform: rotateZ(0deg);
+            }
+
+            50% {
+                transform: rotateZ(30deg);
+            }
+
+            100% {
+                transform: rotateZ(0deg);
+            }
+        }
+        @keyframes rotateHeadRight {
+            0% {
+                transform: rotateZ(0deg);
+            }
+
+            50% {
+                transform: rotateZ(30deg) translate(50px, 5px);
+            }
+
+            100% {
+                transform: rotateZ(0deg);
+            }
+        }
+
+        @keyframes rotateRightArmRight {
+            0% {
+                transform: rotateZ(0deg);
+            }
+
+            50% {
+                transform: rotateZ(45deg) translate(15px, 30px);
+            }
+
+            100% {
+                transform: rotateZ(0deg);
+            }
+        }
+
+        @keyframes rotateRightArmLeft {
+            0% {
+                transform: rotateZ(0deg);
+            }
+
+            50% {
+                transform: rotateZ(-45deg) translate(-15px, -30px);
+            }
+
+            100% {
+                transform: rotateZ(0deg);
+            }
+        }
+
+        @keyframes rotateLeftArmLeft {
+            0% {
+                transform: rotateZ(0deg);
+            }
+
+            50% {
+                transform: rotateZ(-45deg) translate(-15px, 30px);
+            }
+
+            100% {
+                transform: rotateZ(0deg);
+            }
+        }
+
+        @keyframes rotateLeftArmRight {
+            0% {
+                transform: rotateZ(0deg);
+            }
+
+            50% {
+                transform: rotateZ(45deg) translate(15px, -30px);
+            }
+
+            100% {
+                transform: rotateZ(0deg);
+            }
+        }
+
+        @keyframes rotateRightLegRight {
+            0% {
+                transform: rotateZ(0deg);
+            }
+
+            50% {
+                transform: rotateZ(45deg) translate(-50px, 10px);
+            }
+
+            100% {
+                transform: rotateZ(0deg);
+            }
+        }
+
+        @keyframes rotateRightLegLeft {
+            0% {
+                transform: rotateZ(0deg);
+            }
+
+            50% {
+                transform: rotateZ(-15deg) translate(30px, -10px);
+            }
+
+            100% {
+                transform: rotateZ(0deg);
+            }
+        }
+
+        @keyframes rotateLeftLegLeft {
+            0% {
+                transform: rotateZ(0deg);
+            }
+
+            50% {
+                transform: rotateZ(-45deg) translate(50px, -10px);
+            }
+
+            100% {
+                transform: rotateZ(0deg);
+            }
+        }
+
+        @keyframes rotateLeftLegRight {
+            0% {
+                transform: rotateZ(0deg);
+            }
+
+            50% {
+                transform: rotateZ(15deg) translate(-20px, -10px);
+            }
+
+            100% {
+                transform: rotateZ(0deg);
+            }
+        }
+
+        @keyframes rotateLeft {
+            0% {
+                transform: rotateZ(0deg);
+            }
+
+            50% {
+                transform: rotateZ(-30deg);
+            }
+
+            100% {
+                transform: rotateZ(0deg);
+            }
+        }
+
+        @keyframes rotateHeadLeft {
+            0% {
+                transform: rotateZ(0deg);
+            }
+
+            50% {
+                transform: rotateZ(-30deg) translate(-50px, 5px);
+            }
+
+            100% {
+                transform: rotateZ(0deg);
+            }
+        }
+
+        @keyframes bottomRight {
+            0% {
+                transform: translate(0, 0);
+            }
+
+            50% {
+                transform: translate(15px, -15px);
+            }
+
+            100% {
+                transform: translate(0, 0);
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="head rotateHeadRight">
+        <div class="eyes">👁️ 👁️</div>
+        <div class="nose">👃</div>
+        <div class="lips">👄</div>
+    </div>
+    <div class="body">
+        <div class="arm arm1 rotateLeftArmRight"></div>
+        <div class="center rotateRight"></div>
+        <div class="arm arm2 rotateRightArmRight"></div>
+    </div>
+    <div class="bottom">
+        <div class="leg leg1 rotateLeftLegRight"></div>
+        <div class="leg leg2 rotateRightLegRight"></div>
+    </div>
+
+
+    <script>
+
+        let head = document.getElementsByClassName('head')[0];
+        let body = document.getElementsByClassName('center')[0];
+        let leftArm = document.getElementsByClassName('arm1')[0];
+        let rightArm = document.getElementsByClassName('arm2')[0];
+        let leftLeg = document.getElementsByClassName('leg1')[0];
+        let rightLeg = document.getElementsByClassName('leg2')[0];
+
+        dance();
+
+        setInterval(() => {
+            head.classList.add('rotateHeadRight');
+            body.classList.add('rotateRight');
+            rightArm.classList.remove('rotateRightArmLeft');
+            rightArm.classList.add('rotateRightArmRight');
+            rightLeg.classList.remove('rotateRightLegLeft');
+            rightLeg.classList.add('rotateRightLegRight');
+            dance();
+        }, 1300);
+
+        function dance() {
+            setTimeout(() => {
+                head.classList.remove('rotateHeadRight');
+                body.classList.remove('rotateRight');
+                rightArm.classList.remove('rotateRightArmRight');
+                rightArm.classList.add('rotateRightArmLeft');
+                rightLeg.classList.remove('rotateRightLegRight');
+                rightLeg.classList.add('rotateRightLegLeft');
+                head.classList.add('rotateHeadLeft');
+                body.classList.add('rotateLeft');
+                leftArm.classList.add('rotateLeftArmLeft');
+                leftArm.classList.remove('rotateLeftArmRight');
+                leftLeg.classList.remove('rotateLeftLegRight');
+                leftLeg.classList.add('rotateLeftLegLeft');
+                setTimeout(() => {
+                    head.classList.remove('rotateHeadLeft');
+                    body.classList.remove('rotateLeft');
+                    leftArm.classList.remove('rotateLeftArmLeft');
+                    leftArm.classList.add('rotateLeftArmRight');
+                    leftLeg.classList.remove('rotateLeftLegLeft');
+                    leftLeg.classList.add('rotateLeftLegRight');
+                }, 600);
+            }, 600);
+        }
+
+    </script>
+
+</body>
+
+</html>
